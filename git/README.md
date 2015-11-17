@@ -8,7 +8,9 @@ Este guia apresenta o padrão de utilização do GIT utilizado pela Gumini. Aqui
 *Under development*
 
 ## Gitflow
-Para os projetos da Gumini, está sendo adotado o fluxo do GitFlow.
+Para os projetos da Gumini, está sendo adotado o fluxo do GitFlow, métodologia do Vincent Driessen (nvie.com).
+
+Informações completas sobre o método aqui: http://nvie.com/posts/a-successful-git-branching-model/
 
 ### Branches fixas
 - `develop` representa a trilha principal de desenvolvimento. Todos os branches devem ser feitos à partir dela e ela deve estar sempre equiparada ou a frente da `master`
