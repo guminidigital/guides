@@ -104,9 +104,7 @@ Para padronizar, é recomendado que a mensagem do commit complemente a frase **"
 *Under development*
 
 ## Gitflow
-Para os projetos da Gumini, está sendo adotado o fluxo do GitFlow, métodologia do Vincent Driessen (nvie.com).
-
-Informações completas sobre o método aqui: http://nvie.com/posts/a-successful-git-branching-model/
+Para os projetos da Gumini, está sendo adotado o fluxo do GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/).
 
 ### Branches fixas
 - _develop_ representa a trilha principal de desenvolvimento. Todos os branches devem ser feitos à partir dela e ela deve estar sempre equiparada ou a frente da _master_
