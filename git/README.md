@@ -1,5 +1,5 @@
 # GIT
-Este guia apresenta o padrão de utilização do GIT utilizado pela Gumini. Aqui será apresentado o [padrão de commits](#commits), como [versionamos](#versionamento) as entrega, o [fluxo que utilizamos (gitflow)](#gitflow) e alguns [comandos importantes](#comandos) para ter na manga. Enjoy!
+Este guia apresenta o padrão de utilização do GIT utilizado pela Gumini. Aqui será apresentado o [padrão de commits](#commits), como [versionamos](#versionamento) as entrega, o [fluxo que utilizamos (gitflow)](#gitflow), como fazemos a [documentação básica](#documentacao) do projeto e alguns [comandos importantes](#comandos) para ter na manga. Enjoy!
 
 ## Commits
 *Under development*
@@ -52,6 +52,9 @@ Agora que toda QA foi finalizada, hora de mandar para a `master` e versionar.
 - Teste. E teste de novo. E, como é a `master`, teste uma terceira vez.
 - Faça o merge do `release/1.0` em `master`
 - Crie um tag com a [versão](#versionamento) na `master`
+
+## Documentação
+*Under development*
 
 ## Comandos
 *Under development*
