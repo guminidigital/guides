@@ -1,13 +1,13 @@
 # GIT
-Este guia apresenta o padrão de utilização do GIT utilizado pela Gumini. Aqui será apresentado as [boas práticas de commits](#commits), como [versionamos](#versionamento) as entrega, o [fluxo que utilizamos (gitflow)](#gitflow), como fazemos a [documentação básica](#documentacao) do projeto e alguns [comandos importantes](#comandos) para ter na manga. Enjoy!
+Este é um guia de padrões para utilização do GIT utilizado pela Gumini. Aqui serão apresentadas as [boas práticas de commits](#commits), como [versionamos](#versionamento) as entregas, o [fluxo que utilizamos (gitflow)](#gitflow), como fazemos a [documentação básica](#documentacao) do projeto e alguns [comandos importantes](#comandos) para se ter na manga. Enjoy!
 
 ## Commits
-Acima de tudo, os commits são uma **documentação histórica do que foi feito no projeto**. Ajuda você mesmo e outro desenvolvedor que pegar o código a entender o porquê de determinadas decisões feitas. Por isso que um bom commit deve responder "O que?", "Como?" e, o mais importante, "Por quê?".
+Acima de tudo, os commits são uma **documentação histórica do que foi feito no projeto**. Ajuda outros desenvolvedores (e você mesmo) a pegar o código e entender o porquê de determinadas decisões feitas. Por isso, um bom commit deve responder "O que?", "Como?" e, o mais importante, "Por quê?" daquela alteração.
 
-Nosso guia de boas práticas de commits é inspirado no guia de boas práticas do [Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+Nossos padrões de commits são inspirados no guia de boas práticas do [Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
 ### Ilustrando uma situação
-**Cenário:** Solicitação para aumentar a largura de um modal que está muito pequeno no mobile, que tem espaço sobrando nas laterais. Esta task é aberta para um desenvolvedor que não conhece o projeto.
+**Cenário:** É solicitado para aumentar a largura de um modal que está muito pequeno no mobile, que tem espaço sobrando nas laterais. Esta task é aberta para um desenvolvedor que não conhece o projeto.
 
 **O que o desenvolvedor sabe:**
 
@@ -40,15 +40,15 @@ Author: Fulano de Tal <fulano@gumini.com.br>
 
 **Resultado:** Uma nova task é aberta reclamando que no iPhone 5 apareceu um scroll horizontal.
 
-**Motivo:** No ambiente de produção, o CMS adiciona estilos próprios que deixam um padding muito grande na modal. E, sem documentação, o dev não tínha como saber.
+**Motivo:** No ambiente de produção, o CMS adiciona estilos próprios que deixam um padding muito grande na modal. E, sem documentação, o dev não tinha como saber.
 
 
 ### Estrutura de um bom commit
-Um commit deve ser pensado em 2 blocos, a primeira linha é a **mensagem**, curta e direta, como um assunto de e-mail, e o restante é o **corpo**, que contem mais explicações.
+Um commit deve ser pensado em 2 blocos: a primeira linha é a **mensagem**, que deve ser curta e direta, como um assunto de e-mail. O restante é o **corpo**, que contem mais explicações sobre as alterações feitas.
 
 No commit, o corpo nem sempre é necessário. Se você finalizou a programação de uma nova página, um simples `git commit -m "Adiciona front da página de contato"` já explica muito bem o que aconteceu.
 
-Porém, em situações como no caso acima, é necessário mais explicações para futura consulta do código, um commit explicando 'o que?', 'como?' e 'por quê?' é importante:
+Porém, em situações como no caso acima, é necessário mais explicações para futura consulta do código. Por isso, um commit explicando 'o que?', 'como?' e 'por quê?' é importante:
 
 ```
 Resolve #123: Reduz largura da modal
@@ -82,7 +82,7 @@ Todo mundo é fluente? Não.
 Se escrever um bom commit já pode ser desafiador em português, é muito mais complicado você tem que pensar em 'o que?', 'como?' e 'por quê?' em outra língua. Então, segue com pt-BR!
 
 ### Mensagem do commit
-Para padronizar, é recomendado que a mensagem do commit complemente a frase **"Se aplicado, este commit..."**
+Para padronizar e facilitar o pensamento na hora de escrever, é recomendado que a mensagem do commit complemente a frase **"Se aplicado, este commit..."**
 
 - ... Melhora a renderização das fontes da home
 - ... Torna dinâmica a página de quem somos
