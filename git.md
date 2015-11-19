@@ -104,49 +104,53 @@ Para padronizar e facilitar o pensamento na hora de escrever, é recomendado que
 *Under development*
 
 ## Gitflow
-Para os projetos da Gumini, está sendo adotado o fluxo do GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/).
+Para os projetos da Gumini, adotamos o GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ### Branches fixas
 - **_develop_**: representa a trilha principal de desenvolvimento. Todos os branches devem ser feitos à partir dela (exceto hotfixes, como explicado abaixo) e ela deve estar sempre equiparada ou a frente da **_master_**
 - **_master_**: representa os deploys, todos devidamente tagueados. Os commits só entram na master após terem sido finalizadas as QAs internas e do cliente
 
-### Branches de apio
+### Branches de apoio
 Os branches abaixo devem ser deletados do ambiente local e remoto uma vez que forem integrados aos branches fixos
 
 - **_nome-da-feature_** Branches para novas features. Devem ser feitas à partir do **_develop_** e constantemente feito rebases para manter atualizada.
-- **_release/v1.0_** Branches pré release. São feitas à partir da **_develop_**. É aqui onde são feitos os fixes da QA para depois ser integrada à **_master_**. Só pode ter um release por vez.
-- **_hotfix/v1.0.1_** Branches para hotfix, feitas à partir da **_master_** para corrigir erros em produção. Uma vez que o fix tenha sido concluido, deve ser feito merge de volta para a **_master_** e para **_develop_** 
+- **_release/v1.0_** Branches pré release. São feitas à partir da **_develop_**. É aqui onde são feitos os ajustes apontados no QA para depois ser integrada à **_master_**. Só pode ter um release por vez.
+- **_hotfix/v1.0.1_** Branches para hotfix, feitas à partir da **_master_**, para corrigir erros em produção. Uma vez que o fix tenha sido concluido, deve ser feito merge de volta para a **_master_** e para **_develop_**. 
 
 ### IMPORTANTE
-Nada – absolutamente nada – volta para as branches fixas sem terem sido feitos o merge e testadas nas branches dinâmicas. Exemplo: se está trabalhando na feature **_recurso-xyz_**, antes de mandar para **_develop_**, faça um merge de **_develop_** dentro de **_recurso-xyz_**, corrija qualquer problema que possa ter acontecido e, só então, faça o merge em **_develop_**.
+Nada – absolutamente nada – volta para as branches fixas sem terem sido feitos merge e testadas nas branches de apoio. 
+
+Exemplo: se está trabalhando na feature **_recurso-xyz_**, antes de mandar para **_develop_**, faça um merge de **_develop_** dentro de **_recurso-xyz_**, corrija qualquer problema que possa ter acontecido e, só então, faça o merge em **_develop_**.
 
 ### Fluxo dentro do projeto
 #### Iniciando um projeto
 - Nasce com um readme.md na **_master_** com informações básicas do projeto. 
-- Deste commit, nasce a branch **_develop_** e do **_develop_**, já uma branch de feature, como `dev-inicial` onde seguira o desenvolvimento inicial.
+- Deste commit, nasce a branch **_develop_** e do **_develop_**, já uma branch de feature, como **_dev-inicial_** onde seguira o desenvolvimento inicial.
 
 #### Integrando ao **_develop_**
 Fluxo adotado ao finalizar uma feature
 
 - Faça o merge do **_develop_** em **_recurso-xyz_**
 - Teste. E teste de novo.
+- Faça checkout do **_develop_**
 - Faça o merge do **_recurso-xyz_** em **_develop_** com `--no-ff`: `$ git merge --no-ff recurso-xyz`
-- [Deletar o branch](#deletando-um-branch-local-e-remoto) **_recurso-xyz_** local e remoto
+- [Delete o branch](#deletando-um-branch-local-e-remoto) **_recurso-xyz_**, local e remoto
 
 #### Entregando para QA
 Desenvolvimento finalizado? Chegou a hora de fazer a entrega para QA! \o/
 
-- Integre todos branchs de features que fazem parte do release no **_develop_**
+- Integre todos branchs de features que fazem parte do release no **_develop_** (Ver "Integrando ao **_develop_**")
 - Faça um branch de release, à partir do **_develop_**, com o versionamento atual. Ex.: **_release/v1.0_**. É neste branch que serão feitos os ajustes de QA.
-- Faça todos os ajustes commitando direto neste branch, mesmo que tenha mais de uma pessoa trabalhando.
+- Faça todos os ajustes commitando direto neste branch, mesmo que tenha mais de uma pessoa trabalhando nos ajustes.
 
-#### Fazendo o release
+#### Fazendo a entrega
 Agora que toda QA foi finalizada, hora de mandar para a **_master_** e versionar.
 
 - Faça o merge da **_master_** em **_release/v1.0_**
 - Teste. E teste de novo. E, como é a **_master_**, teste uma terceira vez.
+- Faça checkout na **_master_**
 - Faça o merge do **_release/v1.0_** em **_master_** com `--no-ff`: `$ git merge --no-ff release/v1.0`
-- Crie um tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0` seguido de `$ git push origin v1.0`
+- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0` seguido de `$ git push origin v1.0`
 - [Delete o branch](#deletando-um-branch-local-e-remoto) **_release/v1.0_** local e remoto
 
 #### Ajustes do código em produção
