@@ -149,6 +149,18 @@ Agora que toda QA foi finalizada, hora de mandar para a **_master_** e versionar
 - Crie um tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0` seguido de `$ git push origin v1.0`
 - [Delete o branch](#deletando-um-branch-local-e-remoto) **_release/v1.0_** local e remoto
 
+#### Ajustes do código em produção
+O cliente achou um erro em produção! Socorro!
+
+- Faça um branch chamado **_hotfix/v1.0.1_** à partir da tag mais atual na **_master_**
+- Faça as correções necessárias e teste bem
+- Faça checkout na **_master_**
+- Faça o merge do **_hotfix/v1.0.1_** em **_master_** com `--no-ff`: `$ git merge --no-ff hotfix/v1.0.1`
+- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0.1` seguido de `$ git push origin v1.0.1`
+- Faça checkout na **_develop_**
+- Faça o merge do **_hotfix/v1.0.1_** em **_develop_** com `--no-ff`: `$ git merge --no-ff hotfix/v1.0.1`
+- [Delete o branch](#deletando-um-branch-local-e-remoto) **hotfix/v1.0.1_** local e remoto
+
 ## Documentação
 *Under development*
 
