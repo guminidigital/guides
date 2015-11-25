@@ -101,7 +101,13 @@ Para padronizar e facilitar o pensamento na hora de escrever, é recomendado que
 - Mensagem do commit sempre completando a frase "Se aplicado, este commit..."
 
 ## Versionamento
-*Under development*
+Usamos o formato semântico de versionamento (http://semver.org/lang/pt-BR/). O formato apresentado é o de 3 números: 1.2.3, sendo:
+
+1 - MAJOR: Envolve grandes mudanças, como um novo layout de um site ou uma reestruturação completa de um sistema. Qualquer mudança que torne incompatível a versão anterior.
+
+2 - MINOR: Quando adicionadas novas funcionalidades, sem perder compatibilidade com a versão anterior. Por exemplo, uma nova tela que foi adicionada, um novo fluxo de login, uma nova funcionalidade no admin.
+
+3 - PATCH: Uma correção da versão em produção. Se foi encontrado um BUG na versão que está em produção, após corrigido, acresce 1 no PATCH.
 
 ## Gitflow
 Para os projetos da Gumini, adotamos o GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/)
