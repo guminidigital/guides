@@ -184,13 +184,100 @@ O cliente achou um erro em produção! Socorro!
 *Under development*
 
 ## Comandos
-*Under development*
+### Sempre precisa
 
-### Deletando um branch, local e remoto
-*Under development*
+#### Criar um branch com checkout
+```bash
+$ git checkout -b <nome-do-branch>
+```
 
-### Log de modificações de um arquivo
-*Under development*
+#### Deletar um branch, local e remoto
+```bash
+$ git branch -d <nome-do-branch>
+...
+$ git push origin :<nome-do-branch>
+...
+```
 
-### Criando um tag
-*Under development*
+#### Criar e publicar uma tag
+À partir do HEAD do branch
+
+```bash
+$ git tag 1.0.0
+...
+$ git push origin 1.0.0
+...
+```
+
+De um commit específico
+
+```bash
+$ git tag 1.0.0 [<hash>]
+...
+$ git push origin 1.0.0
+...
+```
+
+#### Ver o log de modificações de um arquivo
+```bash
+$ git log -- path/to/file.js
+```
+
+#### Ver o histórico de modificações (diff) de um arquivo
+```bash
+# git log -L{linha-inicial},{qtd-linhas}:path/to/file.js
+$ git log -L1,+3:path/to/file.js
+```
+
+#### Ver o branch que estou
+```bash
+$ git branch
+
+  develop
+* sua-feature
+  master
+```
+
+#### Ver todos os branches
+```bash
+$ git branch -a
+
+  develop
+* sua-feature
+  master
+  remotes/origin/develop
+  remotes/origin/sua-feature
+  remotes/origin/master
+```
+
+### Como que faz mesmo para...
+
+#### Adicionar só parte de um arquivo no staging area
+```bash
+$ git add -p <filename>
+```
+
+#### Limpar arquivos não trackeados
+```bash
+$ git clean -df
+```
+[Documentação](https://git-scm.com/docs/git-clean)
+
+#### Renomear um branch local e remoto
+Renomeia local
+
+```bash
+$ git branch -m old_name new_name
+```
+
+Renomeia remoto. USE COM CAUTELA
+
+```bash
+$ git push origin :old_branch                 # Deleta o branch antigo do remote
+$ git push --set-upstream origin <new_branch> # Dá push do novo branch e faz o track dele local
+```
+
+#### Remover branches que não existem mais
+```bash
+$ git remote prune origin
+```
