@@ -155,18 +155,18 @@ Fluxo adotado ao finalizar uma feature
 Desenvolvimento finalizado? Chegou a hora de fazer a entrega para QA! \o/
 
 - Integre todos branchs de features que fazem parte do release no **_develop_** (Ver "Integrando ao **_develop_**")
-- Faça um branch de release, à partir do **_develop_**, com o versionamento atual. Ex.: **_release/v1.0_**. É neste branch que serão feitos os ajustes de QA.
+- Faça um branch de release, à partir do **_develop_**, com o versionamento atual. Ex.: **_release/1.0.0_**. É neste branch que serão feitos os ajustes de QA.
 - Faça todos os ajustes commitando direto neste branch, mesmo que tenha mais de uma pessoa trabalhando nos ajustes.
 
 #### Fazendo a entrega
 Agora que toda QA foi finalizada, hora de mandar para a **_master_** e versionar.
 
-- Faça o merge da **_master_** em **_release/v1.0_**
+- Faça o merge da **_master_** em **_release/1.0.0_**
 - Teste. E teste de novo. E, como é a **_master_**, teste uma terceira vez.
 - Faça checkout na **_master_**
-- Faça o merge do **_release/v1.0_** em **_master_** com `--no-ff`: `$ git merge --no-ff release/v1.0`
-- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0` seguido de `$ git push origin v1.0`
-- [Delete o branch](#deletando-um-branch-local-e-remoto) **_release/v1.0_** local e remoto
+- Faça o merge do **_release/1.0.0_** em **_master_** com `--no-ff`: `$ git merge --no-ff release/1.0.0`
+- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag 1.0.0` seguido de `$ git push origin 1.0.0`
+- [Delete o branch](#deletando-um-branch-local-e-remoto) **_release/1.0.0_** local e remoto
 
 #### Ajustes do código em produção
 O cliente achou um erro em produção! Socorro!
@@ -175,7 +175,7 @@ O cliente achou um erro em produção! Socorro!
 - Faça as correções necessárias e teste bem
 - Faça checkout na **_master_**
 - Faça o merge do **_hotfix_** em **_master_** com `--no-ff`: `$ git merge --no-ff hotfix`
-- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0.1` seguido de `$ git push origin v1.0.1`
+- Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag 1.0.1` seguido de `$ git push origin 1.0.1`
 - Faça checkout na **_develop_**
 - Faça o merge do **_hotfix_** em **_develop_** com `--no-ff`: `$ git merge --no-ff hotfix`
 - [Delete o branch](#deletando-um-branch-local-e-remoto) **_hotfix_** local e remoto
