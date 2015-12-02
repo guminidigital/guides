@@ -101,6 +101,9 @@ Para padronizar e facilitar o pensamento na hora de escrever, é recomendado que
 - Mensagem do commit sempre completando a frase "Se aplicado, este commit..."
 
 ## Versionamento
+O versionamento acontece em 2 momentos: release candidate (publicação em homologação) e release (publicação em produção).
+
+### Formato
 Usamos o formato semântico de versionamento (http://semver.org/lang/pt-BR/). O formato apresentado é o de 3 números: 1.2.3, sendo:
 
 1 - MAJOR: Envolve grandes mudanças, como um novo layout de um site ou uma reestruturação completa de um sistema. Qualquer mudança que torne incompatível a versão anterior.
@@ -108,6 +111,9 @@ Usamos o formato semântico de versionamento (http://semver.org/lang/pt-BR/). O 
 2 - MINOR: Quando adicionadas novas funcionalidades, sem perder compatibilidade com a versão anterior. Por exemplo, uma nova tela que foi adicionada, um novo fluxo de login, uma nova funcionalidade no admin.
 
 3 - PATCH: Uma correção da versão em produção. Se foi encontrado um BUG na versão que está em produção, após corrigido, acresce 1 no PATCH.
+
+### Release candidate (homologação)
+Cada versão que for disponibilizada para homologação, é um release candidate. É com esta versão que nós ou o cliente validamos e fazemos os ajustes necessários. O versionamento segue o padrão da versão que vai ser feito o release, seguido por -rc{numero}. Cada 
 
 ## Gitflow
 Para os projetos da Gumini, adotamos o GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/)
