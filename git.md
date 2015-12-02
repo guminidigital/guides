@@ -113,7 +113,10 @@ Usamos o formato semântico de versionamento (http://semver.org/lang/pt-BR/). O 
 3 - PATCH: Uma correção da versão em produção. Se foi encontrado um BUG na versão que está em produção, após corrigido, acresce 1 no PATCH.
 
 ### Release candidate (homologação)
-Cada versão que for disponibilizada para homologação, é um release candidate. É com esta versão que nós ou o cliente validamos e fazemos os ajustes necessários. O versionamento segue o padrão da versão que vai ser feito o release, seguido por -rc{numero}. Cada 
+Cada versão que for disponibilizada para homologação, é um release candidate. É com esta versão que nós ou o cliente validamos e fazemos os ajustes necessários. O versionamento segue o padrão da versão que vai ser feito o release, seguido por -rc{numero}. Cada nova publicação recebe um novo rc: 1.0.0-rc1, 1.0.0-rc2, ect...
+
+### Release
+Toda versão que for colocada em ambiente de produção é uma versão de release e recebe a versão no formato 1.0.0. Cada adição de recurso, acresce um número na segunda casa (MINOR), tornando 1.1.0. Cada correção em produção (hotfix) recebe uma versão na terceira casa (PATCH), tornando 1.1.1.
 
 ## Gitflow
 Para os projetos da Gumini, adotamos o GitFlow, metodologia do [Vincent Driessen (nvie.com)](http://nvie.com/posts/a-successful-git-branching-model/)
@@ -127,7 +130,7 @@ Os branches abaixo devem ser deletados do ambiente local e remoto uma vez que fo
 
 - **_nome-da-feature_** Branches para novas features. Devem ser feitas à partir do **_develop_** e constantemente feito rebases para manter atualizada.
 - **_release/v1.0_** Branches pré release. São feitas à partir da **_develop_**. É aqui onde são feitos os ajustes apontados no QA para depois ser integrada à **_master_**. Só pode ter um release por vez.
-- **_hotfix/v1.0.1_** Branches para hotfix, feitas à partir da **_master_**, para corrigir erros em produção. Uma vez que o fix tenha sido concluido, deve ser feito merge de volta para a **_master_** e para **_develop_**. 
+- **_hotfix_** Branches para hotfix, feitas à partir da **_master_**, para corrigir erros em produção. Uma vez que o fix tenha sido concluido, deve ser feito merge de volta para a **_master_** e para **_develop_**. 
 
 ### IMPORTANTE
 Nada – absolutamente nada – volta para as branches fixas sem terem sido feitos merge e testadas nas branches de apoio. 
@@ -168,14 +171,14 @@ Agora que toda QA foi finalizada, hora de mandar para a **_master_** e versionar
 #### Ajustes do código em produção
 O cliente achou um erro em produção! Socorro!
 
-- Faça um branch chamado **_hotfix/v1.0.1_** à partir da tag mais atual na **_master_**
+- Faça um branch chamado **_hotfix_** à partir da tag mais atual na **_master_**
 - Faça as correções necessárias e teste bem
 - Faça checkout na **_master_**
-- Faça o merge do **_hotfix/v1.0.1_** em **_master_** com `--no-ff`: `$ git merge --no-ff hotfix/v1.0.1`
+- Faça o merge do **_hotfix_** em **_master_** com `--no-ff`: `$ git merge --no-ff hotfix`
 - Crie uma tag com a [versão](#versionamento) na **_master_**: `$ git tag v1.0.1` seguido de `$ git push origin v1.0.1`
 - Faça checkout na **_develop_**
-- Faça o merge do **_hotfix/v1.0.1_** em **_develop_** com `--no-ff`: `$ git merge --no-ff hotfix/v1.0.1`
-- [Delete o branch](#deletando-um-branch-local-e-remoto) **hotfix/v1.0.1_** local e remoto
+- Faça o merge do **_hotfix_** em **_develop_** com `--no-ff`: `$ git merge --no-ff hotfix`
+- [Delete o branch](#deletando-um-branch-local-e-remoto) **_hotfix_** local e remoto
 
 ## Documentação
 *Under development*
