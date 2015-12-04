@@ -180,8 +180,12 @@ O cliente achou um erro em produção! Socorro!
 - Faça o merge do **_hotfix_** em **_develop_** com `--no-ff`: `$ git merge --no-ff hotfix`
 - [Delete o branch](#deletando-um-branch-local-e-remoto) **_hotfix_** local e remoto
 
-## Documentação
-*Under development*
+## README.md
+Todo projeto deve ter sua documentação inicial, explicando alguns pontos básicos:
+- Quais são suas dependências
+- Como instalar as dependências
+- Como inicializar o ambiente de desenvolvimento
+- Como deve ser feito o deploy
 
 ## Comandos
 ### Sempre precisa
