@@ -222,6 +222,52 @@ $ git push origin 1.0.0
 ...
 ```
 
+#### Trabalhar com stash
+Criando um stash.
+
+```bash
+# Salva com uma mensagem
+$ git stash save "Mensagem de salvamento"
+
+Saved working directory and index state WIP on master: cf9e5f9 Mensagem do commit
+HEAD is now at cf9e5f9 Mensagem do commit
+
+# Só salva, sem mensagem
+$ git stash
+
+Saved working directory and index state WIP on master: cf9e5f9 Mensagem do commit
+HEAD is now at cf9e5f9 Mensagem do commit
+```
+
+Listando stashes
+
+```bash
+$ git stash list
+
+stash@{0}: WIP on master: cf9e5f9 Upload inicial
+stash@{1}: On master: Mensagem de salvamento
+```
+
+Aplicando um stash
+
+```bash
+# Aplica o último stash feito
+$ git stash apply
+
+# Aplica um stash específico
+$ git stash apply stash@{1}
+```
+
+Dropando um stash
+
+```bash
+# Dropa o último stash feito
+$ git stash drop
+
+# Dropa um stash específico
+$ git stash drop stash@{1}
+```
+
 #### Ver o log de modificações de um arquivo
 ```bash
 $ git log -- path/to/file.js
